@@ -1,0 +1,64 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+      "title": "Grap Restuarant API",
+      "description": "A;; RESTful API Endpoint for Garp Restaurant",
+      "version": "0.0.1"
+    },
+    "paths": {
+      "/api/auth/signin": {
+        "post": {
+          "description": "Sing in to Garp Restaurant",
+
+          "responses": {
+            "200": {
+              "description": "Successfully singin Restaurant",
+              "content": {
+                "application/json": {
+                  "schema": {
+
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "username": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "roles": {
+                          "type": "string",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "accessToken":{
+                            "type": "string"
+                        }
+                      },
+                      "example": 
+                        {
+                            "id": 1,
+                            "username": "Athiphong",
+                            "email": "644259026@gmail.com",
+                            "roles": [
+                              "ROLES_MODERATOR",
+                              "ROLES_ADMIN"
+                            ],
+                            "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk2NDA4ODMwLCJleHAiOjE2OTY0OTUyMzB9.pyFdkKv62j-m39VS2843qBZ0mEiMt72IRXpCW4DI0o0"
+                          }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/restaurant":{
+        "get":{},
+        "post":{}
+      }
+    }
+  }
